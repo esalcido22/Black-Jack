@@ -2,7 +2,7 @@ using System.Globalization;
 using System.Net.Security;
 using System.Runtime.CompilerServices;
 
-class Deck{
+public class Deck{
     
     private List<Card> _cards = new List<Card>();
     private static Random  rng = new Random();

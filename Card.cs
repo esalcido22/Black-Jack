@@ -1,6 +1,6 @@
 using Microsoft.VisualBasic;
 
-class Card{
+public class Card{
     //the suit of the card
     private char _suit;
     //creates setters and getters for _suit
@@ -16,9 +16,9 @@ class Card{
     }
     
     //the denomination of the card
-    private char _denom;
+    private string _denom;
     //creates setters and getters for _denom
-    public char Denom{
+    public string Denom{
         get => _denom;
         set => _denom = value;
     }
@@ -28,23 +28,23 @@ class Card{
         _suit = S;
         switch(D){
             case 1:
-                _denom = 'A';
+                _denom = "A";
                 _value = 11;
                 break;
             case 11:
-                _denom = 'J';
+                _denom = "J";
                 _value = 10;
                 break;
             case 12:
-                _denom = 'Q';
+                _denom = "Q";
                 _value = 10;
                 break;
             case 13:
-                _denom = 'K';
+                _denom = "K";
                 _value = 10;
                 break;
             default:
-                _denom = D.ToString()[0];
+                _denom = D.ToString();
                 _value = D;
                 break;
         }

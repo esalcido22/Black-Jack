@@ -4,21 +4,44 @@
 * 8/9/2024
 */
 
-Console.WriteLine("Welcome to the table. Let's play some Blackjack!");
+public static class Program{
 
-//Creating and shuffling deck
-Deck deck = new Deck();
-deck.Shuffle();
+    public static void gameplayLoop(Hand player, Hand dealer){
+        if(player.Value() == 21){
+            Console.WriteLine("Congratulations you win!");
+            return;
+        }
+        Console.WriteLine("No instant win.");
+        return;
+    }
 
-//Creating player and dealer hands
-Hand player = new Hand();
-player.Add(deck.Draw());
-player.Add(deck.Draw());
-Console.WriteLine("The player's hand:");
-player.Print();
+    public static void Main(string[] args){
+        Console.WriteLine("Welcome to the table. Let's play some Blackjack!");
 
-Hand dealer = new Hand();
-dealer.Add(deck.Draw());
-dealer.Add(deck.Draw());
-Console.WriteLine("The dealer's hand:");
-dealer.Print();
+        //Creating and shuffling deck
+        Deck deck = new Deck();
+        deck.Shuffle();
+
+
+        //Creating player and dealer hands
+        Hand player = new Hand();
+        Hand dealer = new Hand();
+
+        //drawning hands for player and dealer
+        player.Add(deck.Draw());
+        dealer.Add(deck.Draw());
+        player.Add(deck.Draw());
+        dealer.Add(deck.Draw());
+
+        //printing hands
+        Console.WriteLine("The player's hand:");
+        player.Print();
+        Console.WriteLine($"The value of this hand is {player.Value()}");
+        Console.WriteLine("The dealer's hand:");
+        dealer.Print();
+        Console.WriteLine($"The value of this hand is {dealer.Value()}");
+
+        gameplayLoop(player, dealer);
+    }
+
+}
