@@ -1,0 +1,14 @@
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.AssemblyInfoInputs.cache
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.AssemblyInfo.cs
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.csproj.CoreCompileInputs.cache
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\bin\Debug\net8.0\Black Jack.exe
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\bin\Debug\net8.0\Black Jack.deps.json
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\bin\Debug\net8.0\Black Jack.runtimeconfig.json
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\bin\Debug\net8.0\Black Jack.dll
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\bin\Debug\net8.0\Black Jack.pdb
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.dll
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\refint\Black Jack.dll
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.pdb
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.genruntimeconfig.cache
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\ref\Black Jack.dll
