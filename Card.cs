@@ -49,4 +49,9 @@ class Card{
                 break;
         }
     }
+
+    //Prints card info
+    public void Print(){
+        Console.WriteLine($"({_suit}, {_denom}, {_value})");
+    }
 }

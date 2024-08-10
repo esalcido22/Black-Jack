@@ -12,3 +12,4 @@ C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\refint\Bla
 C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.pdb
 C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.genruntimeconfig.cache
 C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\ref\Black Jack.dll
+C:\Users\enriq\OneDrive\Documents\Code\C#\Black Jack\obj\Debug\net8.0\Black Jack.sourcelink.json

@@ -17,8 +17,10 @@ class Deck{
                 _cards.Add(new Card(suit, i));
     }
 
-    public void Draw(){
-        //put card in discard
+    public Card Draw(){
+        Card drawn = _cards[0];
+        _cards.RemoveAt(0);
+        return drawn;
     }
 
     //Shuffles the deck
@@ -34,10 +36,10 @@ class Deck{
     }
 
     //used mostly testing, making sure the deck is properly made and shuffled
-    public void PrintDeck(){
+    public void Print(){
         for (int i = 0; i < _cards.Count; i++)
         {
-            Console.WriteLine($"({_cards[i].Suit}, {_cards[i].Denom}, {_cards[i].Value})");
+            _cards[i].Print();
         }
         Console.WriteLine($"The deck has {_cards.Count} many cards.");
     }
