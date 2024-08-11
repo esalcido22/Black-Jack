@@ -8,12 +8,12 @@ public class Deck{
     private static Random  rng = new Random();
 
     //the suits and face card denominations
-    private static char[] suits = [(char) 3, (char) 4, (char) 5, (char) 6];
+    private static char[] _suits = [(char) 3, (char) 4, (char) 5, (char) 6];
 
     public Deck(){
         //creating the numbered cards
         for(int i = 1; i < 14; i++)
-            foreach(char suit in suits)
+            foreach(char suit in _suits)
                 _cards.Add(new Card(suit, i));
     }
 

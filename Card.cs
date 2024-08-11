@@ -8,19 +8,20 @@ public class Card{
         get => _suit;
         set => _suit = value;
     }
-    
-    private int _value = 0;
-    public int Value{
-        get => _value;
-        set => _value = value;
-    }
-    
+
     //the denomination of the card
     private string _denom;
     //creates setters and getters for _denom
     public string Denom{
         get => _denom;
         set => _denom = value;
+    }
+
+    //the value of the card
+    private int _value = 0;
+    public int Value{
+        get => _value;
+        set => _value = value;
     }
 
     //constructor with suit and denomination given
