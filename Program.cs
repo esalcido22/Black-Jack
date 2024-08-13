@@ -1,13 +1,52 @@
 ﻿/*
 * An over simplified game of blackjack
 * Enrique Salcido
-* 8/9/2024
+* 8/13/2024
 */
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security;
 
 public static class Program{
+
+    //method returns true if the player has sufficient funds for the bet and places the bet and false otherwise
+    public static bool betting(Hand player){
+        
+        Console.WriteLine($"Current credit:{player.Credit}");
+
+        try{
+            Console.WriteLine("Please type in how much you would like to bet.");
+            Console.WriteLine("The options are: 50 (DEFAULT), 100, 200");
+            #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+            string tempBet = Console.ReadLine();
+            #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+            #pragma warning disable CS8604 // Possible null reference argument.
+            int intTempBet = Int32.Parse(tempBet);
+            #pragma warning restore CS8604 // Possible null reference argument.
+            if(intTempBet == 50 || intTempBet == 100 || intTempBet == 200){
+                player.Bet = intTempBet;
+            }else{
+                Console.WriteLine($"You bet of {intTempBet} was not one of the selected options. Setting bet to 50.");
+                player.Bet = 50;
+            }
+        }
+        catch (FormatException){
+            Console.WriteLine("Unable to parse. Setting bet to 50");
+            player.Bet = 50;
+        }
+        
+        //checking if player has enoughh cretid to place bet
+        if(player.Bet <= player.Credit){
+            Console.WriteLine($"A bet of {player.Bet} has been placed");
+            player.Credit -= player.Bet;
+            Console.WriteLine($"New total credit: {player.Credit}.");
+            return true;
+        }else{
+            Console.WriteLine($"Insufficient amount of credit. Ending the game.");
+            return false;
+        }
+    }
 
     public static void dealingWithAce(Hand hand){
         if(hand.Value() > 21)
@@ -19,7 +58,6 @@ public static class Program{
         dealingWithAce(player);
 
         string response = "hit";
-        //have to implement changing the value of aces to 1
         while(response.Equals("hit") && player.Value() <= 21){
             Console.WriteLine("Type \"hit\" to get another card and \"stand\" to stay.");
             #pragma warning disable CS8602 // Dereference of a possibly null reference.
@@ -55,6 +93,8 @@ public static class Program{
         //checking for natural
         if(player.Value() == 21){
             Console.WriteLine("Natural! Congratulations you win!");
+            Console.WriteLine($"You have won {2*player.Bet}");//doing a 2:1 payout
+            player.Credit += 2*player.Bet;
             return;
         }
         
@@ -69,6 +109,8 @@ public static class Program{
         //checking if dealer busted
         if(dealer.Value() > 21){
             Console.WriteLine("The dealer busted. You win!");
+            Console.WriteLine($"You have won {2*player.Bet}");//doing a 2:1 payout
+            player.Credit += 2*player.Bet;
             return;
         }
 
@@ -78,6 +120,8 @@ public static class Program{
             return;
         }else if(player.Value() >= dealer.Value()){
             Console.WriteLine("Congratulations you win!");
+            Console.WriteLine($"You have won {2*player.Bet}");//doing a 2:1 payout
+            player.Credit += 2*player.Bet;
             return;
         }else{
             Console.WriteLine("The dealer wins.");
@@ -88,17 +132,17 @@ public static class Program{
     public static void Main(string[] args){
         Console.WriteLine("Welcome to the table. Let's play some Blackjack!");
 
+        //Creating player and dealer hands
+        Hand player = new Hand();
+        player.Credit = 500; //Choose an arbitrary amound of credit mostly for testing
+        Hand dealer = new Hand();
+
         string response = "again";
         #pragma warning disable CS8602 // Dereference of a possibly null reference.
-        while (response.Equals("again")){
+        while (response.Equals("again") && betting(player)){
             //Creating and shuffling deck
             Deck deck = new Deck();
             deck.Shuffle();
-
-
-            //Creating player and dealer hands
-            Hand player = new Hand();
-            Hand dealer = new Hand();
 
             //drawning hands for player and dealer
             player.Add(deck.Draw());
@@ -111,7 +155,7 @@ public static class Program{
             player.Print();
             //Console.WriteLine($"The value of this hand is {player.Value()}");
             Console.WriteLine("The dealer's hand:");
-            dealer.Print();
+            dealer.DealerPrint();
             //Console.WriteLine($"The value of this hand is {dealer.Value()}");
         
         
@@ -120,8 +164,13 @@ public static class Program{
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             response = Console.ReadLine();
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+
+            //discarding hands
+            player.discard();
+            dealer.discard();
         }
         #pragma warning restore CS8602 // Dereference of a possibly null reference.
+        Console.WriteLine($"Please take your ticket for {player.Credit}.");
         Console.WriteLine("Thank you for playing! Come again!");
     }
 }

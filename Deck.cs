@@ -1,3 +1,9 @@
+/*
+* Deck class to simulate a standard 52 card deck
+* Enrique Salcido
+* 8/13/2024
+*/
+
 using System.Globalization;
 using System.Net.Security;
 using System.Runtime.CompilerServices;
@@ -7,14 +13,18 @@ public class Deck{
     private List<Card> _cards = new List<Card>();
     private static Random  rng = new Random();
 
+    //lets you choose the number of standard decks you want to use
+    private int numDecks = 1;
+
     //the suits and face card denominations
     private static char[] _suits = [(char) 3, (char) 4, (char) 5, (char) 6];
 
     public Deck(){
         //creating the numbered cards
-        for(int i = 1; i < 14; i++)
-            foreach(char suit in _suits)
-                _cards.Add(new Card(suit, i));
+        for(int i = 1; i <= numDecks; i++)
+            for(int j = 1; j < 14; j++)
+                foreach(char suit in _suits)
+                    _cards.Add(new Card(suit, j));
     }
 
     public Card Draw(){

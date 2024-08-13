@@ -1,3 +1,9 @@
+/*
+* Card class to simulate a standard playing card
+* Enrique Salcido
+* 8/13/2024
+*/
+
 using Microsoft.VisualBasic;
 
 public class Card{
