@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Black Jack", "Black Jack.csproj", "{A5D6DBD2-7520-444C-95BF-EA5E90531C49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Black Jack", "Black Jack.csproj", "{95001F03-7182-4961-85B3-6D64C641CFCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5D6DBD2-7520-444C-95BF-EA5E90531C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5D6DBD2-7520-444C-95BF-EA5E90531C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5D6DBD2-7520-444C-95BF-EA5E90531C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5D6DBD2-7520-444C-95BF-EA5E90531C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95001F03-7182-4961-85B3-6D64C641CFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95001F03-7182-4961-85B3-6D64C641CFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95001F03-7182-4961-85B3-6D64C641CFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95001F03-7182-4961-85B3-6D64C641CFCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
